@@ -1,0 +1,8 @@
+{
+  "routes": {
+    "/personalBlog": {},
+    "/personalBlog/about": {},
+    "/personalBlog/contact": {},
+    "/personalBlog/projects": {}
+  }
+}

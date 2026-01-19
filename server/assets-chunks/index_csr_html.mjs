@@ -1,0 +1,30 @@
+export default `<!doctype html>
+<html lang="en" data-beasties-container="">
+
+<head>
+  <meta charset="utf-8">
+  <title>Parth Barot - Software Engineer & Full Stack Developer</title>
+  <base href="https://barotparth27.github.io/personalBlog/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Parth Barot - Experienced Software Engineer specializing in .NET Core, Angular, and modern web technologies. Based in Gujarat, India.">
+  <meta name="keywords" content="Parth Barot, Software Engineer, .NET Core, Angular, Full Stack Developer, Web Development, C#, TypeScript">
+  <meta name="author" content="Parth Barot">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Parth Barot - Software Engineer">
+  <meta property="og:description" content="Experienced Software Engineer specializing in .NET Core, Angular, and modern web technologies">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://parthbarot.dev">
+
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Parth Barot - Software Engineer">
+  <meta name="twitter:description" content="Experienced Software Engineer specializing in .NET Core, Angular, and modern web technologies">
+<style>*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}body{font-family:Inter,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,sans-serif;line-height:1.6;color:#333;background-color:#faf9f7;font-size:16px}*:focus{outline:2px solid #d4704a;outline-offset:2px}*{transition:color .3s ease,background-color .3s ease,border-color .3s ease,transform .3s ease,box-shadow .3s ease}@media screen and (max-width: 480px){body{font-size:14px}}@media print{*{background:#fff!important;color:#000!important;box-shadow:none!important}}</style><link rel="stylesheet" href="styles-S4BNNVPJ.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="styles-S4BNNVPJ.css"></noscript></head>
+
+<body ngcm="">
+  <app-root></app-root>
+<script src="polyfills-B6TNHZQ6.js" type="module"></script><script src="main-7FOLAVKI.js" type="module"></script></body>
+
+</html>`;
