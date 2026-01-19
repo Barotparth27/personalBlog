@@ -1,0 +1,35 @@
+<header class="header">
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a routerLink="/">
+                    <span class="logo-icon">🅿️</span>Parth.
+                </a>
+            </div>
+
+            <div class="nav-menu" [class.active]="isMenuOpen">
+                <a routerLink="/" class="nav-link" routerLinkActive="active"
+                    [routerLinkActiveOptions]="{exact: true}">Home</a>
+                <a routerLink="/about" class="nav-link" routerLinkActive="active">About</a>
+                <a routerLink="/projects" class="nav-link" routerLinkActive="active">Portfolio</a>
+                <a routerLink="/contact" class="nav-link" routerLinkActive="active">Contact</a>
+            </div>
+
+            <div class="nav-social">
+                <span class="follow-text">Follow Us</span>
+                <div class="social-icons">
+                    <a href="#" class="social-icon">📘</a>
+                    <a href="#" class="social-icon">🐦</a>
+                    <a href="#" class="social-icon">📷</a>
+                    <a href="#" class="social-icon">💼</a>
+                </div>
+            </div>
+
+            <div class="nav-toggle" (click)="toggleMenu()">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+</header>
