@@ -16,12 +16,11 @@
     min-height: 100vh;
     display: flex;
     align-items: center;
-    background: linear-gradient(135deg, #f0ede8 0%, #e8e2db 100%);
     position: relative;
     overflow: hidden;
 }
 
-/* Hero Background Image */
+/* Hero Background Image - Full image display */
 .hero-background {
     position: absolute;
     top: 0;
@@ -29,24 +28,25 @@
     width: 100%;
     height: 100%;
     z-index: 1;
-    opacity: 0.3;
 }
 
 .hero-bg-image {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    filter: blur(2px) brightness(1.1);
+    object-position: center;
 }
 
 .hero-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
+    display: flex;
     align-items: center;
     width: 100%;
     position: relative;
     z-index: 5;
+}
+
+.hero-text {
+    max-width: 500px;
 }
 
 .hero-intro {
@@ -67,18 +67,21 @@
     color: #333;
     margin-bottom: 1rem;
     letter-spacing: -2px;
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8);
 }
 
 .highlight {
     color: #d4704a;
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8);
 }
 
 .hero-subtitle {
     font-size: 0.9rem;
-    color: #666;
+    color: #333;
     letter-spacing: 2px;
     margin-bottom: 3rem;
     position: relative;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
 }
 
 .hero-subtitle::before {
@@ -99,10 +102,23 @@
     align-items: center;
     gap: 0.5rem;
     transition: all 0.3s ease;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
 }
 
 .cta-link:hover {
     color: #d4704a;
+}
+
+.arrow {
+    font-size: 1.2rem;
+}
+
+.play-button {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 2rem;
+    display: block;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
 }
 
 .arrow {
@@ -152,150 +168,128 @@
 }
 
 /* Decorative Elements - Exact match to reference image */
-.decorative-elements {
+.floral-decoration {
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
     pointer-events: none;
-    z-index: 1;
-}
-
-/* Floral Arrangement - Matching the reference image exactly */
-.floral-arrangement {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-}
-
-.floral-cluster {
-    position: absolute;
-}
-
-/* Main floral cluster on the right side of the person */
-.cluster-right {
-    top: 0%;
-    right: 5%;
-    width: 280px;
-    height: 380px;
-    transform: rotate(-3deg);
     z-index: 5;
 }
 
-/* Smaller floral cluster on the left */
-.cluster-left {
-    bottom: 15%;
-    left: 10%;
-    width: 140px;
-    height: 200px;
-    transform: rotate(8deg);
-    z-index: 5;
-}
-
-/* Individual floral elements */
-.flower,
-.leaf,
-.branch {
+/* Floral elements positioned behind the person like in reference */
+.floral-element,
+.leaf-element,
+.branch-element {
     position: absolute;
-    font-size: 2rem;
-    opacity: 0.95;
+    font-size: 2.5rem;
+    opacity: 0.9;
 }
 
-/* Right cluster flowers - positioned like in reference */
-.flower-1 {
-    top: 15%;
-    right: 25%;
+/* Main floral cluster behind and around the person */
+.floral-1 {
+    top: 10%;
+    right: 15%;
     font-size: 3.5rem;
     color: #f4c2a6;
     transform: rotate(-15deg);
+    z-index: 5;
 }
 
-.flower-2 {
-    top: 35%;
+.floral-2 {
+    top: 25%;
     right: 5%;
     font-size: 3rem;
     color: #f8d7a3;
     transform: rotate(10deg);
+    z-index: 5;
 }
 
-.flower-3 {
-    top: 55%;
+.floral-3 {
+    top: 45%;
     right: 20%;
-    font-size: 2.5rem;
+    font-size: 2.8rem;
     color: #f4a6a6;
-    transform: rotate(-5deg);
+    transform: rotate(-8deg);
+    z-index: 5;
 }
 
-/* Leaves and branches for right cluster */
+.floral-4 {
+    top: 60%;
+    right: 8%;
+    font-size: 2.5rem;
+    color: #f8d7a3;
+    transform: rotate(15deg);
+    z-index: 5;
+}
+
+.floral-5 {
+    top: 75%;
+    right: 25%;
+    font-size: 2.2rem;
+    color: #f4c2a6;
+    transform: rotate(-10deg);
+    z-index: 5;
+}
+
+/* Leaf elements */
 .leaf-1 {
     top: 5%;
-    right: 15%;
+    right: 25%;
     font-size: 2.8rem;
     color: #a8c09a;
     transform: rotate(25deg);
+    z-index: 5;
 }
 
 .leaf-2 {
-    top: 25%;
+    top: 35%;
     right: 35%;
-    font-size: 2.2rem;
+    font-size: 2.4rem;
     color: #9bb88d;
     transform: rotate(-20deg);
+    z-index: 5;
 }
 
 .leaf-3 {
-    top: 65%;
-    right: 10%;
+    top: 55%;
+    right: 2%;
     font-size: 2rem;
     color: #d4a574;
-    transform: rotate(15deg);
-}
-
-.branch-1 {
-    top: 45%;
-    right: 30%;
-    font-size: 2.5rem;
-    color: #b8a082;
-    transform: rotate(-10deg);
-}
-
-.branch-2 {
-    top: 75%;
-    right: 25%;
-    font-size: 1.8rem;
-    color: #a8c09a;
-    transform: rotate(20deg);
-}
-
-/* Left cluster elements */
-.flower-4 {
-    top: 25%;
-    left: 15%;
-    font-size: 2.2rem;
-    color: #f4a6a6;
-    transform: rotate(8deg);
+    transform: rotate(18deg);
+    z-index: 5;
 }
 
 .leaf-4 {
-    top: 45%;
-    left: 25%;
-    font-size: 2rem;
+    top: 80%;
+    right: 15%;
+    font-size: 2.2rem;
     color: #a8c09a;
-    transform: rotate(-15deg);
+    transform: rotate(-12deg);
+    z-index: 5;
 }
 
-.branch-3 {
-    top: 65%;
-    left: 5%;
-    font-size: 1.8rem;
+/* Branch elements */
+.branch-1 {
+    top: 15%;
+    right: 40%;
+    font-size: 2.5rem;
+    color: #b8a082;
+    transform: rotate(-25deg);
+    z-index: 5;
+}
+
+.branch-2 {
+    top: 70%;
+    right: 35%;
+    font-size: 2rem;
     color: #9bb88d;
-    transform: rotate(25deg);
+    transform: rotate(22deg);
+    z-index: 5;
 }
 
-/* Geometric Shapes - Exact positioning from reference */
+/* Geometric Shapes - Positioned exactly like reference */
 .geometric-shapes {
     position: absolute;
     top: 0;
@@ -303,65 +297,113 @@
     right: 0;
     bottom: 0;
     z-index: 2;
+    pointer-events: none;
 }
 
 .shape {
     position: absolute;
 }
 
-/* Pink triangle on the left - exactly like reference */
-.triangle-pink {
-    top: 25%;
-    left: 8%;
+/* Left side shapes */
+.shape-triangle-pink {
+    top: 20%;
+    left: 5%;
     width: 0;
     height: 0;
-    border-left: 25px solid transparent;
-    border-right: 25px solid transparent;
-    border-bottom: 40px solid #f4a6d7;
-    border-radius: 12px;
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    border-bottom: 45px solid #f4a6d7;
+    border-radius: 15px;
     transform: rotate(25deg);
     opacity: 0.7;
 }
 
-/* Orange/peach circle on top right - exactly positioned */
-.circle-orange {
-    top: 10%;
-    right: 15%;
-    width: 60px;
-    height: 60px;
-    background: linear-gradient(135deg, #f4c2a6, #f8d7a3);
+.shape-circle-coral {
+    bottom: 40%;
+    left: 2%;
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, #ff6b6b, #ff8e8e);
     border-radius: 50%;
     opacity: 0.6;
 }
 
-/* Mint green circle on bottom right - exactly positioned */
-.circle-mint {
-    bottom: 10%;
-    right: 8%;
-    width: 80px;
-    height: 80px;
+.shape-triangle-orange {
+    bottom: 15%;
+    left: 15%;
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-bottom: 30px solid #ffa726;
+    border-radius: 10px;
+    transform: rotate(-15deg);
+    opacity: 0.5;
+}
+
+/* Right side shapes */
+.shape-circle-mint {
+    bottom: 8%;
+    right: 5%;
+    width: 90px;
+    height: 90px;
     background: linear-gradient(135deg, #a8e6d0, #7fcdcd);
     border-radius: 50%;
     opacity: 0.5;
 }
 
-/* Additional light shapes for depth - matching reference */
-.circle-light-1 {
-    top: 55%;
-    left: 8%;
-    width: 45px;
-    height: 45px;
-    background: rgba(244, 166, 166, 0.4);
+.shape-circle-peach {
+    top: 8%;
+    right: 12%;
+    width: 65px;
+    height: 65px;
+    background: linear-gradient(135deg, #f4c2a6, #f8d7a3);
     border-radius: 50%;
+    opacity: 0.6;
 }
 
-.circle-light-2 {
-    bottom: 35%;
-    right: 35%;
+.shape-triangle-light {
+    top: 35%;
+    right: 2%;
+    width: 0;
+    height: 0;
+    border-left: 18px solid transparent;
+    border-right: 18px solid transparent;
+    border-bottom: 28px solid rgba(244, 166, 166, 0.4);
+    border-radius: 8px;
+    transform: rotate(45deg);
+    opacity: 0.4;
+}
+
+/* Small scattered shapes */
+.shape-circle-small-1 {
+    top: 60%;
+    left: 8%;
     width: 35px;
     height: 35px;
-    background: rgba(168, 230, 208, 0.5);
+    background: rgba(168, 230, 208, 0.4);
     border-radius: 50%;
+    opacity: 0.5;
+}
+
+.shape-circle-small-2 {
+    bottom: 25%;
+    right: 30%;
+    width: 25px;
+    height: 25px;
+    background: rgba(244, 166, 215, 0.5);
+    border-radius: 50%;
+    opacity: 0.6;
+}
+
+.shape-circle-small-3 {
+    top: 45%;
+    left: 12%;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 167, 38, 0.4);
+    border-radius: 50%;
+    opacity: 0.4;
 }
 
 /* Subtle floating animation */
@@ -377,34 +419,54 @@
     }
 }
 
-.flower,
-.leaf,
-.branch {
+.floral-element,
+.leaf-element,
+.branch-element {
     animation: gentleFloat 4s ease-in-out infinite;
 }
 
-.flower-1 {
+.floral-1 {
     animation-delay: 0s;
 }
 
-.flower-2 {
+.floral-2 {
     animation-delay: 0.5s;
 }
 
-.flower-3 {
+.floral-3 {
     animation-delay: 1s;
 }
 
-.leaf-1 {
+.floral-4 {
     animation-delay: 1.5s;
 }
 
-.leaf-2 {
+.floral-5 {
     animation-delay: 2s;
 }
 
-.leaf-3 {
+.leaf-1 {
     animation-delay: 2.5s;
+}
+
+.leaf-2 {
+    animation-delay: 3s;
+}
+
+.leaf-3 {
+    animation-delay: 0.8s;
+}
+
+.leaf-4 {
+    animation-delay: 1.3s;
+}
+
+.branch-1 {
+    animation-delay: 1.8s;
+}
+
+.branch-2 {
+    animation-delay: 2.3s;
 }
 
 /* Section Headers */
@@ -803,24 +865,14 @@
     }
 
     /* Adjust decorative elements for mobile */
-    .cluster-right {
-        width: 180px;
-        height: 250px;
-    }
-
-    .cluster-left {
-        width: 100px;
-        height: 120px;
-    }
-
-    .flower,
-    .leaf,
-    .branch {
-        font-size: 1.5rem;
+    .floral-element,
+    .leaf-element,
+    .branch-element {
+        font-size: 1.8rem;
     }
 
     .shape {
-        transform: scale(0.8);
+        transform: scale(0.7);
     }
 }
 
@@ -857,14 +909,14 @@
         height: 100px;
     }
 
-    .flower,
-    .leaf,
-    .branch {
-        font-size: 1.2rem;
+    .floral-element,
+    .leaf-element,
+    .branch-element {
+        font-size: 1.4rem;
     }
 
     .shape {
-        transform: scale(0.6);
+        transform: scale(0.5);
     }
 }
 
