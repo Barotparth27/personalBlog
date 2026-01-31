@@ -20,7 +20,7 @@
     overflow: hidden;
 }
 
-/* Hero Background Image - Full image display */
+/* Hero Background - Using img tag for better mobile support */
 .hero-background {
     position: absolute;
     top: 0;
@@ -34,7 +34,8 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center;
+    object-position: center center;
+    display: block;
 }
 
 .hero-content {
@@ -47,6 +48,8 @@
 
 .hero-text {
     max-width: 500px;
+    position: relative;
+    z-index: 5;
 }
 
 .hero-intro {
@@ -828,15 +831,47 @@
 }
 
 /* Mobile Responsive */
+@media screen and (max-width: 1024px) {
+    .hero-bg-image {
+        object-position: center center;
+    }
+}
+
 @media screen and (max-width: 768px) {
+    .hero {
+        min-height: 100vh;
+        padding: 1rem 0;
+    }
+
+    .hero-bg-image {
+        object-position: center center;
+        object-fit: cover;
+    }
+
     .hero-content {
         grid-template-columns: 1fr;
         text-align: center;
         gap: 2rem;
+        padding: 2rem 0;
+        position: relative;
+        z-index: 5;
     }
 
     .hero-title {
         font-size: 3rem;
+        text-shadow: 2px 2px 8px rgba(255, 255, 255, 0.9);
+    }
+
+    .hero-subtitle {
+        text-shadow: 1px 1px 4px rgba(255, 255, 255, 0.9);
+    }
+
+    .cta-link {
+        text-shadow: 1px 1px 4px rgba(255, 255, 255, 0.9);
+    }
+
+    .play-button {
+        text-shadow: 1px 1px 4px rgba(255, 255, 255, 0.9);
     }
 
     .profile-image-wrapper {
@@ -878,11 +913,40 @@
 
 @media screen and (max-width: 480px) {
     .hero {
-        padding: 2rem 0;
+        min-height: 100vh;
+        padding: 1rem 0;
+    }
+
+    .hero-bg-image {
+        object-position: center center;
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+    }
+
+    .hero-content {
+        padding: 1rem 0;
+        position: relative;
+        z-index: 5;
     }
 
     .hero-title {
         font-size: 2.5rem;
+        text-shadow: 2px 2px 8px rgba(255, 255, 255, 0.9);
+    }
+
+    .hero-subtitle {
+        text-shadow: 1px 1px 4px rgba(255, 255, 255, 0.9);
+        font-size: 0.8rem;
+    }
+
+    .cta-link {
+        text-shadow: 1px 1px 4px rgba(255, 255, 255, 0.9);
+    }
+
+    .play-button {
+        text-shadow: 1px 1px 4px rgba(255, 255, 255, 0.9);
+        font-size: 1.2rem;
     }
 
     .section-title {
@@ -917,6 +981,15 @@
 
     .shape {
         transform: scale(0.5);
+    }
+
+    /* Ensure text remains readable on mobile */
+    .hero-text {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(5px);
+        padding: 1.5rem;
+        border-radius: 15px;
+        margin: 1rem;
     }
 }
 
