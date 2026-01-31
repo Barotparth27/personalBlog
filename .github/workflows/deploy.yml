@@ -1,4 +1,4 @@
-name: Deploy Angular to GitHub Pages (Debug)
+name: Deploy Angular to GitHub Pages
 
 on:
   push:
@@ -22,12 +22,27 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 18
+          cache: 'npm'
 
       - name: Install dependencies
         run: npm ci
 
-      - name: Build Angular app (debug)
+      - name: Build Angular app
+        run: npx ng build --configuration production --base-href /personalBlog/
+
+      - name: Prepare GitHub Pages files
         run: |
-          npx ng build --configuration production --base-href /personalBlog/
-          echo "===== DIST CONTENT ====="
-          ls -R dist
+          cp dist/parth-barot-blog/browser/index.html dist/parth-barot-blog/browser/404.html
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist/parth-barot-blog/browser
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v4
