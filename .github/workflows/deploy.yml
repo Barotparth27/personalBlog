@@ -32,19 +32,19 @@ jobs:
         run: npm ci
 
       - name: Build Angular app
-        run: npm run build -- --configuration production --base-href /personalBlog/
+        run: npx ng build --configuration production --base-href /personalBlog/
 
-      - name: Fix GitHub Pages routing
-        run: cp dist/personal-blog/browser/index.html dist/personal-blog/browser/404.html
+      - name: Fix SPA routing
+        run: cp dist/personal-blog/index.html dist/personal-blog/404.html
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: dist/personal-blog/browser
+          path: dist/personal-blog
 
   deploy:
-    runs-on: ubuntu-latest
     needs: build
+    runs-on: ubuntu-latest
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
